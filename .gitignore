@@ -1,7 +1,19 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-dist
+dist/*
+
+!dist/packages
+dist/packages/*
+
+!dist/packages/web/
+dist/packages/web/*
+!dist/packages/web/package.json
+
+!dist/packages/some-service/
+dist/packages/some-service/*
+!dist/packages/some-service/package.json
+
 tmp
 /out-tsc
 
@@ -37,3 +49,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Next.js
+.next

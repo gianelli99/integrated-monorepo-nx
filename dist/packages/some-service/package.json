@@ -1,0 +1,13 @@
+{
+  "name": "some-service",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nestjs/common": "9.3.9",
+    "@nestjs/core": "9.3.9",
+    "@nestjs/platform-express": "9.3.9",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "7.8.0",
+    "tslib": "2.5.0"
+  },
+  "main": "main.js"
+}
