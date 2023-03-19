@@ -8,10 +8,14 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: nrwl/nx-set-shas@v3
+
+      - name: Set SHAs
+        uses: nrwl/nx-set-shas@v3
+
       - run: npm ci
 
-      - run: npx nx affected --target=build --parallel=3
+      - run: npx nx affected --target=container --parallel=3
