@@ -12,7 +12,7 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "packages/web",
-        "outputPath": "dist/packages/web",
+        "outputPath": "dist/packages/web"
       },
       "configurations": {
         "development": {
@@ -70,6 +70,25 @@
         "lintFilePatterns": [
           "packages/web/**/*.{ts,tsx,js,jsx}"
         ]
+      }
+    },
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "options": {
+        "engine": "docker",
+        "metadata": {
+          "images": [
+            "integrated-monorepo-nx/web"
+          ],
+          "load": true,
+          "tags": [
+            "type=schedule",
+            "type=ref,event=branch",
+            "type=ref,event=tag",
+            "type=ref,event=pr",
+            "type=sha,prefix=sha-"
+          ]
+        }
       }
     }
   },
