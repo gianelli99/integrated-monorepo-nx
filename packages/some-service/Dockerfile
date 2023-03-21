@@ -18,4 +18,5 @@ COPY dist/packages/some-service .
 RUN chown -R node:node .
 USER node
 EXPOSE 3000
+RUN echo $(du -h)
 CMD ["dumb-init", "node", "main.js"]
