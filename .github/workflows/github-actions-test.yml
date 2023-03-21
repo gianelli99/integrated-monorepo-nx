@@ -19,8 +19,12 @@ jobs:
       - name: Set SHAs
         uses: nrwl/nx-set-shas@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
       - run: npm ci
 
       - run: npx nx affected --target=build --parallel=3
-      
+
       - run: INPUT_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} npx nx affected --target=container --parallel=3
