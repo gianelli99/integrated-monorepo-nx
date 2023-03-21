@@ -24,6 +24,6 @@ EXPOSE 3000
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry.
-RUN echo $(du -h)
+RUN echo $(du -hs)
 ENV NEXT_TELEMETRY_DISABLED 1
 CMD ["dumb-init", "node_modules/.bin/next", "start"]
